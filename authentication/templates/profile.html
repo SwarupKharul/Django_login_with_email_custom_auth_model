@@ -1,0 +1,10 @@
+Hello User
+<br>
+Mail Id: {{ user.email }}
+<br>
+Mobile Number: {{ user.mob }}
+
+<form method="POST" action="{% url 'logoutuser' %}">
+    {% csrf_token %}
+    <button id="signOutBtn" type="submit">Logout</button>
+</form>
