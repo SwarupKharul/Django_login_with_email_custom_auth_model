@@ -39,15 +39,14 @@ class MyUser(AbstractBaseUser):
     )
     mob = models.IntegerField()
     is_active = models.BooleanField(default=True)
-    is_admin = models.BooleanField(default=False) # a superuser
-    # notice the absence of a "Password field", that is built in.
+    is_admin = models.BooleanField(default=False) 
 
     objects = MyUserManager()
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['mob'] # Email & Password are required by default.
 
-    def __str__(self):              # __unicode__ on Python 2
+    def __str__(self):             
         return self.email
 
     def has_perm(self, perm, obj=None):
