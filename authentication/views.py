@@ -7,6 +7,7 @@ from .models import MyUser
 def home(request):
     return render(request, 'home.html')
 
+@login_required
 def profile(request):
     #details = User.objects.filter(user=request.user)
     return render(request, 'profile.html')
@@ -46,6 +47,7 @@ def loginuser(request):
             login(request, user)
             return redirect('profile')
 
+@login_required
 def logoutuser(request):
     if request.method == 'POST':
         logout(request)
