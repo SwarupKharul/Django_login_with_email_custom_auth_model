@@ -3,6 +3,7 @@ from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
 from .Forms import UserAdminCreationForm, AuthenticationForm
 from .models import MyUser
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     return render(request, 'home.html')

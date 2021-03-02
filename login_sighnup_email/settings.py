@@ -26,7 +26,7 @@ SECRET_KEY = 't$qk2t#do=q%!jfosf(d#@p7k!b_blg%llu@!^@05fy06ny3)='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['customauthmodeldjango.azurewebsites.net']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
