@@ -1,1 +1,1 @@
-web: gunicorn MovieInfo.wsgi --log-file -
+web: gunicorn login_sighnup_email.wsgi --log-file -
