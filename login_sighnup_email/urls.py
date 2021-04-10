@@ -19,9 +19,10 @@ from authentication import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('signup/', views.signup, name='signup'),
+    path('', views.loginuser, name='loginuser'),
     path('loginuser/', views.loginuser, name='loginuser'),
     path('logout/', views.logoutuser, name='logoutuser'),
-    path('profile/', views.profile, name='profile')
+    path('ideas/', views.ideas, name='ideas'),
+    path('ideas/', views.ideas, name='ideas'),
+    path('submitidea/', views.submitidea, name='submitidea')
 ]

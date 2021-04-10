@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.contrib.auth import authenticate, get_user_model
 from django.utils.text import capfirst
-from .models import MyUser
+from .models import MyUser, Idea
 
 class UserAdminCreationForm(forms.ModelForm):
     class Meta:
@@ -49,3 +49,9 @@ class AuthenticationForm(forms.Form):
         self.username_field = UserModel._meta.get_field(UserModel.USERNAME_FIELD)
         if self.fields['email'].label is None:
             self.fields['email'].label = capfirst(self.username_field.verbose_name)
+
+
+class IdeaForm(forms.ModelForm):
+    class Meta:
+        model = Idea
+        fields = ['title', 'description']

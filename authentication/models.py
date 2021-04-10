@@ -64,4 +64,12 @@ class MyUser(AbstractBaseUser):
         "Is the user a member of staff?"
         return self.is_admin
     
-    
+class Idea(models.Model):
+    objects = None
+    title = models.CharField(max_length=100, null=True)
+    description = models.TextField(null=True)
+    stack= models.TextField(null=True, default="Not yet processed")
+    user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
